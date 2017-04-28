@@ -1,10 +1,9 @@
 \documentclass[11pt]{report}
-\usepackage{outline}
-\usepackage{pmgraph}
-\usepackage[normalem]{ulem}
-\title{\textbf{Title}}
-\author{Author 1\\and Author 2,\\et al.}
-\date{\oldstylenums{00}/\oldstylenums{00}/\oldstylenums{00}}
+\usepackage{color}
+\title{\color{cyan} \textbf{Kiko Simulation and Analytics}}
+\author{Amith Kumar\\and \\Sandip Baishnab}
+\date{\today}
+
 %--------------------Make usable space all of page
 \setlength{\oddsidemargin}{0in}
 \setlength{\evensidemargin}{0in}
@@ -16,25 +15,58 @@
 \setlength{\parindent}{1cm}
 
 \begin{document}
-%--------------------Title Page
+%-------------------- Title Page
 \maketitle
- 
-%--------------------Begin Outline
-\begin{outline}
-	\item Problem Statement \\ Constraints:
-    \begin{outline}
-    	\item Constraint 1
-    	\item Constraint 2
-    	\item Constraint 3
-
-	\end{outline}
-\end{outline}
+%-------------------- Contents
+\tableofcontents
 
 \newpage
+\section{\color{cyan} Simulation }
+Aim of the simulation is to generate movement data (paths) across different target points, visualize and use the same data for analysis.
+\subsection{Simple Problem Formulation}
+1. Formation of a N*N matrix\\
+2. Many targets are there inside the matrix\\
+3. An agent is Moving inside the matrix based on markov principle\\
+4. Agent always choose shortest path to reach its target\\
+\subsection{Model Building using Markov process}
+1. Markov chain building based on the movement
+\subsection{Data generation from model for analytics}
+1. Data collection from simulation and storing into database 
+\subsection{Activity Heatmap Generation}
+1. Heatmap to understand the Activity
+\subsection{Load all the work to AWS }
+1. An instance of the Simulation to AWS for demonstration
 
-Conclusion
-\par Par 1
-\par Par 2
-\par Par 3
+\newpage
+\section{\color{cyan} Analytics}
+1. Performing some analysis of simulated data
+\subsection{Interpretation of data}
+1. Understanding the simulated data
+\subsection{Statistical Analysis}
+Basic statistical analysis
+\subsubsection*{Analysis of distribution}
+1. Distribution of hittting multiple targets
+\subsubsection{Analysis of Standard Deviation}
+1. Standard Deviation
+\subsubsection{Analysis of  variance}
+1. Variance
+\subsubsection{Analysis of  Mean}
+1. Mean
+\subsubsection{Boxplot for Comparison of Simulations}
+1. Boxplot
+\subsubsection{Correlation Analysis between Simulations}
+1. Correlation
+\subsubsection{Other Insights}
+1. Other Inferences
+
+\newpage
+\section{\color{cyan} PRISM (Probability Model Checks)}
+1. Probability based model Checking
+\section{\color{cyan} Documentation of the Work}
+1. Inclusion of UML Diagram
+
+
+
+
 
 \end{document}
