@@ -1,9 +1,0 @@
----
-title: "Analysis of Simulation"
-author: 
-      - Amith Kumar
-      - Sandip Baishnab
-date: May 3,2017
-output: pdf_document
----
-
