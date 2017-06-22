@@ -1,8 +1,8 @@
 /**
-* Name: matrixOp
-* Author: Eoxys-Win10
-* Description: 
-* Tags: Tag1, Tag2, TagN
+* Name: Sprint-2
+* Author: Amith
+* Description: Model with an extra target point which acts as entry/exit.
+* Tags:
 */
 
 model test_matrix
