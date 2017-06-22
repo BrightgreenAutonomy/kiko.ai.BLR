@@ -4,3 +4,6 @@
 [submodule "overleaf/sprint1"]
 	path = overleaf/sprint1
 	url = https://git.overleaf.com/9473547dhbtqcddzwwc
+[submodule "overleaf/sprint2"]
+	path = overleaf/sprint2
+	url = https://git.overleaf.com/9705845rqrtngpbcpjp
