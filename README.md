@@ -3,11 +3,11 @@
 This repo contains documentation, latex files (overleaf submodules) and other related resources about simulations and analysis of the simulation results. 
 
 #### link to overleaf docs :
-**Sprint - 1:** [link to sprint 1] (https://www.overleaf.com/9473547dhbtqcddzwwc#/34394327/)
+**Sprint - 1:** (https://www.overleaf.com/9473547dhbtqcddzwwc#/34394327/)
 
-**Sprint - 2:** [link to sprint 2] (https://www.overleaf.com/9705845rqrtngpbcpjp#/35370120/)
+**Sprint - 2:** (https://www.overleaf.com/9705845rqrtngpbcpjp#/35370120/)
 
-**Discrete Choice Model:** [link to DCM] (https://www.overleaf.com/10011093xyshkjddzsjj#/36817045/)
+**Discrete Choice Model:** (https://www.overleaf.com/10011093xyshkjddzsjj#/36817045/)
 
 ## NOTE: Initialize overleaf submodules:
 
