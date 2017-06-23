@@ -1,0 +1,85 @@
+---
+title: "Curvature Measurement of Discrete Trajectories"
+author: Sandip Baishnab
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+#Introduction
+The objective of curvature mesurement is to identify the curve on a path. A path can take any shape from linear to nonlinear and could be a closed path or simply an unclosed one. In a two dimensional cartesian cordinate system, a path can be described by joining lines between points. These discrete points on the coordinate system reminds the concept of discrete function. Discrete function has many application in the field of digital signal processing.It brings out the concept of discrete points whereas a continuous function tells about continuity. An example helps us to understand continuous and discrete function as follows -
+
+__Continuous Function__
+
+Let us take an example of $y=x^2$ where $x \epsilon R$. The function looks like as follows -
+
+![Continuous Function](cont.png)
+
+__Discrete Function__
+
+For the discrete function $y=x^2$, we can not represent the function as $y = ?$. If we have {x = -3, -2, -1, 0, 1, 2, 3} we can draw the function as follows-
+
+![Discrete Function](dist.png)
+
+The concept of discrete function can be assimilated for our curvature measurement of discretely sampled function. We have discretely sampled trajectory data and it talks about movement from one cordinate to other during entire simulation. Next section is dedicated for analyzing that movement dataset.
+
+# Curvature Measurement
+
+This section describes about the available dataset and its resemblance to the above mentioned discrete function and curvature measurement.
+
+__Dataset__
+
+As already mentioned, we have coordinates of each step in a grid with 50*50 dimensions. The dataset described here representing an ordered coordinates and if we join them, we will get a path as mentioned above. The path is obtained from a discretely sampled function which is unknown to us. The dataset is as follows -
+
+```{r,echo=FALSE}
+
+data <- read.csv("data.csv",header=TRUE,sep=",")
+working_data <- data[,c("Source_X","Source_Y")]
+colnames(working_data) <- c("X","Y")
+head(working_data)
+
+```
+
+__Sample Dataset Plot__
+
+```{r,echo=FALSE,fig.height=4,fig.width=6}
+
+x <- working_data[,"X"]
+y <- working_data[,"Y"]
+
+m <- as.vector(x[1:50])
+n <- as.vector(y[1:50])
+
+plot(m,n,col="cyan",main="Sample Trajectory",xlab ="X",ylab="Y")
+```
+
+__Package Features__
+
+Package "features" in R measure many features obtained from a discretely sampled function. The features include mean value, first and second derivatives,
+critical points (i.e. local maxima and minima), curvature of function at critical points, wiggliness of the function, noise in data, and outliers in data. As we are interested in curvature, the result will show the same. The process of extracting features is to smooth the discretely-sampled function first. Features
+of the smoothed function are then extracted. If we plot the whole smoothing operation we will get  a 2 x 2 layout, where the top 2 frames are the same and they depict the raw data and the smoothed function. The bottom left panel shows the smoothed first derivative, and the bottom right panel depicts the smoothed second derivative. Feature plottting of sample dataset is given below -
+
+```{r,echo=FALSE,fig.height=10,fig.width=10,message=FALSE,warning=FALSE}
+library(features)
+result <- features(m,n,smoother="glkerns", fits.return=TRUE,
+                   control = list(npts=100, c.outlier=3, decim.out=2))
+
+plot(result,col="deepskyblue")
+
+```
+
+
+__Curvature__
+
+The curvature of the path is as follows -
+
+```{r,echo=FALSE}
+result <- features(m,n,smoother="glkerns", fits.return=TRUE,
+                   control = list(npts=100, c.outlier=3, decim.out=2))
+print(result$curvature)
+
+```
+
+
+# Conclusion
+The actual data, smoothed data, first derivative and second derivative are shown in the figure to help us to understand how the curvature has been computed. Scondly it provides other valuable information or features of a discretely-sampled function, may be needed in future to get other insights.
+
